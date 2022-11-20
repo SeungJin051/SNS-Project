@@ -1,25 +1,23 @@
 import { dbService } from "fbase";
 import { useState, useEffect } from "react";
 import { addDoc, getDocs, collection } from "firebase/firestore";
+import { onSnapshot } from "firebase/firestore";
 import { async } from "@firebase/util";
 
-const Home = () => {
+const Home = ({ userObj }) => {
+  console.log(userObj);
   const [mind, setMind] = useState("");
   const [minds, setMinds] = useState([]);
 
-  const getMinds = async () => {
-    const dbMinds = await getDocs(collection(dbService, "minds"));
-    dbMinds.forEach((document) => {
-      const MindObject = {
-        ...document.data(),
-        id: document.id,
-      };
-      setMinds((prev) => [MindObject, ...prev]);
-    });
-  };
-
   useEffect(() => {
-    getMinds();
+    // 실시간 구현
+    onSnapshot(collection(dbService, "minds"), (snapshot) => {
+      const mindArray = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setMinds(mindArray);
+    });
   }, []);
 
   const onSubmit = async (event) => {
@@ -27,6 +25,7 @@ const Home = () => {
     await addDoc(collection(dbService, "minds"), {
       text: mind,
       createdAt: Date.now(),
+      creatorID: userObj.uid,
     });
     setMind("");
   };
@@ -53,7 +52,7 @@ const Home = () => {
       <div>
         {minds.map((mind) => (
           <div key={mind.id}>
-            <h4>{mind.mind}</h4>
+            <h4>{mind.text}</h4>
           </div>
         ))}
       </div>
