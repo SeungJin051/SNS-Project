@@ -1,6 +1,7 @@
-import { dbService } from "fbase";
+import { dbService, storageService } from "fbase";
 import { doc, deleteDoc, updateDoc } from "firebase/firestore";
 import { useState } from "react";
+import { deleteObject, ref } from "@firebase/storage";
 
 const Mind = ({ mindObj, isOwner }) => {
   const [editing, setEditing] = useState(false);
@@ -12,7 +13,8 @@ const Mind = ({ mindObj, isOwner }) => {
     console.log(ok);
     if (ok) {
       // delete mind mindObj의 id를 얻어서 / 삭제 Mind의 객체 / prop으로 보냄
-      deleteDoc(doc(dbService, "minds", mindObj.id));
+      await deleteDoc(doc(dbService, "minds", mindObj.id));
+      await deleteObject(ref(storageService, mindObj.fileUrl));
     }
   };
 
@@ -57,7 +59,13 @@ const Mind = ({ mindObj, isOwner }) => {
         </>
       ) : (
         <>
-          <h4>{mindObj.text}</h4>
+          {/*  */}
+          <h4>
+            {mindObj.text} | {mindObj.email}
+            {mindObj.fileUrl && (
+              <img src={mindObj.fileUrl} width="50px" height="50px" />
+            )}
+          </h4>
           {isOwner && (
             <>
               <button onClick={onDeleteClick}>삭제</button>
