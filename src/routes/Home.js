@@ -2,10 +2,11 @@ import { dbService } from "fbase";
 import { useState, useEffect } from "react";
 import { addDoc, getDocs, collection } from "firebase/firestore";
 import { onSnapshot } from "firebase/firestore";
-import { async } from "@firebase/util";
+import Mind from "components/Mind";
 
 const Home = ({ userObj }) => {
   console.log(userObj);
+  // for form
   const [mind, setMind] = useState("");
   const [minds, setMinds] = useState([]);
 
@@ -51,9 +52,11 @@ const Home = ({ userObj }) => {
       </form>
       <div>
         {minds.map((mind) => (
-          <div key={mind.id}>
-            <h4>{mind.text}</h4>
-          </div>
+          <Mind
+            key={mind.id}
+            mindObj={mind}
+            isOwner={mind.creatorID === userObj.uid}
+          />
         ))}
       </div>
     </div>
