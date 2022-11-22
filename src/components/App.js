@@ -1,7 +1,6 @@
 import AppRouter from "./Router";
 import React, { useState, useEffect } from "react";
 import { authService } from "fbase";
-import { updateProfile } from "@firebase/auth";
 
 function App() {
   const [init, setInit] = useState(false);
@@ -27,6 +26,7 @@ function App() {
         }
       } else {
         setIsLoggedIn(false);
+        setUserObj(null);
       }
       setInit(true);
     });
