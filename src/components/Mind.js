@@ -60,8 +60,11 @@ const Mind = ({ mindObj, isOwner }) => {
       ) : (
         <>
           {/*  */}
+          <h3>
+            {mindObj.name} | {mindObj.email}
+          </h3>
           <h4>
-            {mindObj.text} | {mindObj.email}
+            {mindObj.text}
             {mindObj.fileUrl && (
               <img src={mindObj.fileUrl} width="50px" height="50px" />
             )}
