@@ -3,8 +3,8 @@ import {
   getAuth,
   signInWithEmailAndPassword,
 } from "firebase/auth";
+import "styles/AuthTest.css";
 import { useState } from "react";
-
 const AuthForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -46,32 +46,41 @@ const AuthForm = () => {
 
   return (
     <>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} className="container">
+        <img
+          className="login-image"
+          src="https://www.waca.associates/jp/knowledge/wp-content/uploads/2020/06/2020-06-26-sns-manager-03-1000x525.png"
+        />
         <input
           name="email"
           type="email"
-          placeholder="Email"
+          placeholder="이메일"
           required
           value={email}
           onChange={onChange}
+          className="authInput"
         />
         <input
           name="password"
           type="password"
-          placeholder="Password"
+          placeholder="비밀번호"
           required
           value={password}
           onChange={onChange}
           minLength={6}
+          className="authInput"
         />
+
         <input
           type="submit"
-          value={newAccount ? "Create Account" : "Sign in"}
+          value={newAccount ? "회원가입" : "로그인"}
+          className=" authSubmitInput"
         />
-        {error}
+        {error && <span className="authError">{error}</span>}
       </form>
-      <span onClick={toggleAccount}>
-        {newAccount ? "Sign in" : "Create Account"}
+
+      <span onClick={toggleAccount} className="authSwitch">
+        {newAccount ? "회원가입" : "로그인"}
       </span>
     </>
   );
