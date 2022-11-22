@@ -10,6 +10,7 @@ import {
 } from "@firebase/firestore";
 import { dbService } from "fbase";
 import { updateProfile } from "@firebase/auth";
+import "styles/ProfileTest.css";
 
 //1. 로그인한 유저 정보 prop으로 받기
 const Profile = ({ userObj, refreshUser }) => {
@@ -61,21 +62,27 @@ const Profile = ({ userObj, refreshUser }) => {
 
   return (
     // Link to = "/"
-    <>
-      <form onSubmit={onSubmit}>
+    <div className="container">
+      {" "}
+      <form onSubmit={onSubmit} className="profileForm">
         <input
           onChange={onChange}
           type="text"
           placeholder="이름을 입력하세요"
           value={newUserName}
+          autoFocus
+          className="formInput"
         />
-        <input type="submit" value="프로필 이름 변경" />
+        <input type="submit" value="프로필 이름 변경" className="profileBtn" />
       </form>
-      <button onClick={onLogOutClick}>
+      {/* <button onClick={onLogOutClick}>
         {" "}
         <Link to="/">Sign out</Link>
-      </button>
-    </>
+      </button> */}
+      <span className="formBtn cancelBtn logOut" onClick={onLogOutClick}>
+        Log Out
+      </span>
+    </div>
   );
 };
 

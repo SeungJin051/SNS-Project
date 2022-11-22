@@ -3,6 +3,9 @@ import { useState } from "react";
 import { ref, uploadString, getDownloadURL } from "@firebase/storage";
 import { v4 } from "uuid";
 import { addDoc, collection, onSnapshot } from "firebase/firestore";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
+import "styles/MindFactoryTest.css";
 
 const MindFactory = ({ userObj }) => {
   const [mind, setMind] = useState("");
@@ -69,22 +72,45 @@ const MindFactory = ({ userObj }) => {
   // clear file
   const onClearFile = () => setFile("");
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} className="factoryForm">
+      <div className="factoryInput__container">
+        <input
+          className="factoryInput__input"
+          required={true}
+          minLength={5}
+          value={mind}
+          onChange={onChange}
+          type="text"
+          placeholder="Type your mind"
+          maxLength={120}
+        />
+        <input type="submit" value="Send" className="factoryInput__arrow" />
+      </div>
+      <label htmlFor="attach-file" className="factoryInput__label">
+        <span>Add photos</span>
+        <FontAwesomeIcon icon={faPlus} />
+      </label>
       <input
-        required={true}
-        minLength={5}
-        value={mind}
-        onChange={onChange}
-        type="text"
-        placeholder="Type your mind"
-        maxLength={120}
+        id="attach-file"
+        type="file"
+        accept="image/*"
+        onChange={onFileChange}
+        style={{
+          opacity: 0,
+        }}
       />
-      <input type="file" accept="image/*" onChange={onFileChange} />
-      <input type="submit" value="Send" />
       {file && (
-        <div>
-          <img src={file} width="50px" height="50px" />
-          <button onClick={onClearFile}>취소</button>
+        <div className="factoryForm__attachment">
+          <img
+            src={file}
+            style={{
+              backgroundImage: file,
+            }}
+          />
+          <div className="factoryForm__clear" onClick={onClearFile}>
+            <span>Remove</span>
+            <FontAwesomeIcon icon={faTimes} />
+          </div>
         </div>
       )}
     </form>

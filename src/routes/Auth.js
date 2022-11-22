@@ -5,6 +5,15 @@ import {
   GoogleAuthProvider,
   GithubAuthProvider,
 } from "firebase/auth";
+import "styles/AuthTest.css";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faTwitter,
+  faGoogle,
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons";
+
 const Auth = () => {
   // Social Login
   const onSocialClick = async (event) => {
@@ -21,14 +30,22 @@ const Auth = () => {
     console.log(data);
   };
   return (
-    <div>
+    <div className="authContainer">
       <AuthForm />
-      <div>
-        <button onClick={onSocialClick} name="google">
-          Continue with Google
+      <div className="authBtns">
+        <button
+          onClick={onSocialClick}
+          name="google"
+          className="authBtn_google"
+        >
+          구글 로그인 <FontAwesomeIcon icon={faGoogle} />
         </button>
-        <button onClick={onSocialClick} name="github">
-          Continue with Github
+        <button
+          onClick={onSocialClick}
+          name="github"
+          className="authBtn_github"
+        >
+          깃허브 로그인 <FontAwesomeIcon icon={faGithub} />
         </button>
       </div>
     </div>
