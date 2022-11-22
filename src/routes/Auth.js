@@ -83,6 +83,7 @@ const Auth = () => {
           required
           value={password}
           onChange={onChange}
+          minLength={6}
         />
         <input
           type="submit"
