@@ -1,12 +1,10 @@
 import AuthForm from "components/AuthForm";
 import { authService } from "fbase";
-
 import {
   signInWithPopup,
   GoogleAuthProvider,
   GithubAuthProvider,
 } from "firebase/auth";
-
 const Auth = () => {
   // Social Login
   const onSocialClick = async (event) => {
