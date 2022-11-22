@@ -2,6 +2,9 @@ import { dbService, storageService } from "fbase";
 import { doc, deleteDoc, updateDoc } from "firebase/firestore";
 import { useState } from "react";
 import { deleteObject, ref } from "@firebase/storage";
+import "styles/MindTest.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash, faPencilAlt } from "@fortawesome/free-solid-svg-icons";
 
 const Mind = ({ mindObj, isOwner }) => {
   const [editing, setEditing] = useState(false);
@@ -37,23 +40,26 @@ const Mind = ({ mindObj, isOwner }) => {
     setNewMind(value);
   };
   return (
-    <div>
+    <div className="nweet">
       {editing ? (
         <>
           {isOwner && (
             <>
-              {" "}
-              <form onSubmit={onSubmit}>
+              <form onSubmit={onSubmit} className="container nweetEdit">
                 <input
                   type="text"
                   placeholder="당신의 생각을 수정하세요."
                   value={newMind}
                   required
                   onChange={onChange}
+                  autoFocus
+                  className="formInput"
                 />
-                <input type="submit" value="Update" />
+                <input type="submit" value="Update" className="formBtn" />
               </form>
-              <button onClick={toggleEditing}>취소</button>
+              <button onClick={toggleEditing} className="formBtn cancelBtn">
+                취소
+              </button>
             </>
           )}
         </>
@@ -65,15 +71,18 @@ const Mind = ({ mindObj, isOwner }) => {
           </h3>
           <h4>
             {mindObj.text}
-            {mindObj.fileUrl && (
-              <img src={mindObj.fileUrl} width="50px" height="50px" />
-            )}
+            {/* {mindObj.fileUrl && <img src={mindObj.fileUrl} />} */}
           </h4>
+          {mindObj.fileUrl && <img src={mindObj.fileUrl} />}
           {isOwner && (
-            <>
-              <button onClick={onDeleteClick}>삭제</button>
-              <button onClick={toggleEditing}>수정</button>
-            </>
+            <div className="nweet__actions">
+              <span onClick={onDeleteClick}>
+                <FontAwesomeIcon icon={faTrash} />
+              </span>
+              <span onClick={toggleEditing}>
+                <FontAwesomeIcon icon={faPencilAlt} />
+              </span>
+            </div>
           )}
         </>
       )}
