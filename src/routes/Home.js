@@ -44,6 +44,7 @@ const Home = ({ userObj }) => {
       createdAt: Date.now(),
       creatorID: userObj.uid,
       email: userObj.email,
+      name: userObj.displayName,
       fileUrl,
     };
 
