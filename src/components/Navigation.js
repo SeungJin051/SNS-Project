@@ -1,19 +1,15 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPenToSquare, faUserEdit } from "@fortawesome/free-solid-svg-icons";
+import { faHomeAlt, faUserEdit } from "@fortawesome/free-solid-svg-icons";
 import "styles/NavAnimation.css";
 
 const Navigation = ({ userObj }) => (
   <nav>
-    <ul style={{ display: "flex", justifyContent: "center", marginTop: 50 }}>
+    <ul style={{ display: "flex", justifyContent: "center", marginTop: 40 }}>
       <li>
         <Link to="/" tyle={{ marginRight: 10 }}>
-          <FontAwesomeIcon
-            icon={faPenToSquare}
-            color={"#8f8fff"}
-            size="2x"
-            className="search"
-          />
+          <FontAwesomeIcon icon={faHomeAlt} size="2x" />
+          <p style={{ fontWeight: "bold", marginLeft: 9 }}>홈</p>
         </Link>
       </li>
       <li>
@@ -27,13 +23,8 @@ const Navigation = ({ userObj }) => (
             fontWeight: "bold",
           }}
         >
-          <FontAwesomeIcon
-            icon={faUserEdit}
-            color={"#8f8fff"}
-            size="2x"
-            className="search"
-          />
-          {userObj.displayName} 프로필
+          <FontAwesomeIcon icon={faUserEdit} size="2x" />
+          {userObj.displayName}님의 프로필
         </Link>
       </li>
     </ul>
