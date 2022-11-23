@@ -10,6 +10,7 @@ const Mind = ({ mindObj, isOwner }) => {
   const [editing, setEditing] = useState(false);
   const [newMind, setNewMind] = useState(mindObj.text);
 
+  const MindTextRef = doc(dbService, "minds", `${mindObj.id}`);
   // 삭제
   const onDeleteClick = async () => {
     const ok = window.confirm("정말 삭제하시겠습니까?");
@@ -17,7 +18,10 @@ const Mind = ({ mindObj, isOwner }) => {
     if (ok) {
       // delete mind mindObj의 id를 얻어서 / 삭제 Mind의 객체 / prop으로 보냄
       await deleteDoc(doc(dbService, "minds", mindObj.id));
-      await deleteObject(ref(storageService, mindObj.fileUrl));
+      const urlRef = ref(storageService, mindObj.fileUrl);
+      if (mindObj.attachmentUrl !== "") {
+        await deleteObject(urlRef);
+      }
     }
   };
 
@@ -28,7 +32,10 @@ const Mind = ({ mindObj, isOwner }) => {
   const onSubmit = async (event) => {
     event.preventDefault();
     console.log(mindObj, newMind);
-    updateDoc(doc(dbService, "minds", mindObj.id), { text: newMind });
+    // await updateDoc(doc(dbService, "minds", mindObj.id), { text: newMind });
+    await updateDoc(MindTextRef, {
+      text: newMind,
+    });
     setEditing(false);
   };
 
@@ -55,7 +62,7 @@ const Mind = ({ mindObj, isOwner }) => {
                   autoFocus
                   className="formInput"
                 />
-                <input type="submit" value="Update" className="formBtn" />
+                <input type="submit" value="수정" className="formBtn" />
               </form>
               <button onClick={toggleEditing} className="formBtn cancelBtn">
                 취소
@@ -65,14 +72,12 @@ const Mind = ({ mindObj, isOwner }) => {
         </>
       ) : (
         <>
-          {/*  */}
-          <h3>
-            {mindObj.name} | {mindObj.email}
-          </h3>
-          <h4>
-            {mindObj.text}
-            {/* {mindObj.fileUrl && <img src={mindObj.fileUrl} />} */}
-          </h4>
+          <h3 className="mind-user">{mindObj.name}</h3>
+          <br></br>
+          <h4 className="mind-user-email">{mindObj.email}</h4>
+          <br></br>
+          <br></br>
+          <h4 className="mind-text">{mindObj.text}</h4>
           {mindObj.fileUrl && <img src={mindObj.fileUrl} />}
           {isOwner && (
             <div className="nweet__actions">
