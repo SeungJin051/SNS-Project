@@ -1,10 +1,10 @@
 .search {
-  animation: motion 1s /* 속도 */ linear 0s
+  animation: motion 2s /* 속도 */ linear 0s
     /* 처음부터 끝까지 일정 속도로 진행 */ infinite alternate; /* 무한 반복 */
 }
 @keyframes motion {
   0% {
-    width: 25px;
+    width: 20px;
   }
   100% {
     width: 30px;

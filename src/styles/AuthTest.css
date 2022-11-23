@@ -15,12 +15,6 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 14px;
-  color: white;
-}
-
-button {
-  background-color: black;
-  color: black;
 }
 
 a {
@@ -32,16 +26,9 @@ form {
   width: 100%;
 }
 
-.container {
-  width: 100%;
-  max-width: 320px;
-  display: flex;
-  flex-direction: column;
-}
-
 /* Auth */
 .login-image {
-  margin-top: -150px;
+  margin-top: -80px;
   margin-bottom: 50px;
   border-radius: 15px;
 }
@@ -69,8 +56,9 @@ form {
   font-size: 12px;
   text-align: center;
   width: 150px;
-  background: rgb(55, 79, 255);
-  color: white;
+  background: #ffffff;
+  color: black;
+  border: 1px solid #ddd;
   cursor: pointer;
 }
 
@@ -82,8 +70,9 @@ form {
   font-size: 12px;
   text-align: center;
   width: 150px;
-  background: rgb(164, 37, 255);
-  color: white;
+  background: #ffffff;
+  color: black;
+  border: 1px solid #ddd;
   cursor: pointer;
 }
 /* AuthForm */
@@ -93,10 +82,16 @@ form {
   width: 100%;
   padding: 10px;
   background-color: rgba(255, 255, 255);
-  border-bottom: 1px solid rgb(0, 0, 0);
+  border-bottom: 1.5px solid #ddd;
   margin-bottom: 0px;
-  font-size: 12px;
+  font-size: 14px;
   color: black;
+  text-align: center;
+}
+
+.authInput::placeholder {
+  text-align: center;
+  font-size: 14px;
 }
 
 .authSubmit {
@@ -110,16 +105,16 @@ form {
 .authSubmitInput {
   max-width: 320px;
   width: 100%;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid rgb(0, 0, 0);
+  padding: 15px 10px;
+  border-radius: 30px;
+  border: none;
+  font-weight: 600;
+  color: white;
   margin-bottom: 10px;
-  font-size: 12px;
-
+  font-size: 18px;
   text-align: center;
-  background: #9dff99;
-  color: black;
-  margin-top: 10px;
+  background: #53ad88;
+  margin-top: 30px;
   cursor: pointer;
 }
 
@@ -131,11 +126,37 @@ form {
 }
 
 .authSwitch {
-  color: #04aaff;
+  color: black;
+  cursor: pointer;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.authSwitch-lnk {
   cursor: pointer;
   margin-top: 30px;
   margin-bottom: 30px;
   display: block;
   font-size: 12px;
   text-decoration: underline;
+}
+
+.change-login {
+  color: #53ad88;
+  border-bottom: 1.5px solid #53ad88;
+}
+
+.change-login-div {
+  margin-bottom: 30px;
+}
+
+.main-title {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
 }

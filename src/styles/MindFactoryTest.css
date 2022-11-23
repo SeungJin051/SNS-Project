@@ -46,41 +46,37 @@ form {
   width: 100%;
 }
 
-.factoryInput__container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  position: relative;
-  margin-bottom: 20px;
-  width: 100%;
-}
-
 .factoryInput__input {
   flex-grow: 1;
+  width: 230px;
   height: 40px;
-  padding: 0px 20px;
+  padding-bottom: 20px;
   color: black;
-  border: 1px solid #8f8fff;
-  border-radius: 20px;
+  border-bottom: 1px solid #ddd;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 17px;
+  margin-left: -75px;
+  margin-bottom: 20px;
 }
 
+.factoryInput__input::placeholder {
+  font-size: 17px;
+  font-weight: 400;
+}
 .factoryInput__arrow {
   position: absolute;
-  right: 0;
   background-color: rgb(255, 71, 71);
+  font-weight: 700;
   height: 40px;
-  width: 50px;
+  width: 80px;
+  border-radius: 35px;
   padding: 10px 0px;
   text-align: center;
-  border-radius: 0px 20px 20px 0px;
   color: white;
 }
 
 .factoryInput__label {
-  color: #8f8fff;
+  color: #53ad88;
   cursor: pointer;
 }
 

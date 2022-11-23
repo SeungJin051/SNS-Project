@@ -53,12 +53,14 @@ form {
   border-radius: 20px;
   background-color: #04aaff;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .cancelBtn {
   cursor: pointer;
   background-color: tomato;
   border: none;
+  font-weight: bold;
 }
 
 .container {
@@ -76,27 +78,26 @@ form {
 
 .mind-user {
   position: relative;
-  left: 55px;
+  left: -19px;
+  top: -10px;
   font-size: 19px;
   font-weight: bold;
 }
 
 .mind-user-email {
   position: relative;
-  top: -7px;
-  left: 55px;
+  top: -15px;
+  left: -18px;
   color: rgb(44, 44, 44);
-  font-weight: 600;
+  font-weight: 300;
   opacity: 0.6;
 }
 .nweet {
-  margin-bottom: 20px;
-  background-color: #f6f6f6;
+  background-color: white;
   width: 100%;
   max-width: 320px;
-  padding: 20px;
-  padding-bottom: 50px;
-  border-radius: 10px;
+  padding: 30px;
+  padding-bottom: 45px;
   border: 1px solid #ddd;
   position: relative;
   display: flex;
@@ -109,8 +110,8 @@ form {
 }
 
 .nweet img {
-  right: 223px;
-  top: -10px;
+  right: 5px;
+  top: -3px;
   border-radius: 10px;
   position: absolute;
   width: 70px;
@@ -120,7 +121,7 @@ form {
 
 .nweet__actions {
   position: absolute;
-  right: 15px;
+  right: 90px;
   top: 10px;
 }
 

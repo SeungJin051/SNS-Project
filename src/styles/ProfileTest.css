@@ -54,5 +54,13 @@ body {
 }
 
 .logOut {
-  margin-top: 50px;
+  margin-top: 40px;
+}
+
+.pro-line {
+  border: 1px solid black;
+}
+
+.pro-logout-btn {
+  width: 70px;
 }
