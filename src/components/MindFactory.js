@@ -14,7 +14,6 @@ const MindFactory = ({ userObj }) => {
   const onSubmit = async (event) => {
     event.preventDefault();
     let fileUrl = "";
-
     // reference
     if (file !== "") {
       //파일 경로 참조 만들기
@@ -33,6 +32,7 @@ const MindFactory = ({ userObj }) => {
       creatorID: userObj.uid,
       email: userObj.email,
       name: userObj.displayName,
+      timestamp: new Date(),
       fileUrl,
     };
 
@@ -81,10 +81,10 @@ const MindFactory = ({ userObj }) => {
           value={mind}
           onChange={onChange}
           type="text"
-          placeholder="Type your mind"
+          placeholder="당신의 생각을 알려줘요."
           maxLength={120}
         />
-        <input type="submit" value="Send" className="factoryInput__arrow" />
+        <input type="submit" value="전송" className="factoryInput__arrow" />
       </div>
       <label htmlFor="attach-file" className="factoryInput__label">
         <span>Add photos</span>
@@ -108,7 +108,6 @@ const MindFactory = ({ userObj }) => {
             }}
           />
           <div className="factoryForm__clear" onClick={onClearFile}>
-            <span>Remove</span>
             <FontAwesomeIcon icon={faTimes} />
           </div>
         </div>
