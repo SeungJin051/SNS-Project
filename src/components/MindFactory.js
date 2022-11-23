@@ -77,7 +77,6 @@ const MindFactory = ({ userObj }) => {
         <input
           className="factoryInput__input"
           required={true}
-          minLength={5}
           value={mind}
           onChange={onChange}
           type="text"
