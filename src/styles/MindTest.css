@@ -11,7 +11,7 @@ input {
 }
 
 body {
-  background-color: black;
+  background-color: rgba(255, 255, 255);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 14px;
@@ -58,6 +58,7 @@ form {
 .cancelBtn {
   cursor: pointer;
   background-color: tomato;
+  border: none;
 }
 
 .container {
@@ -73,13 +74,30 @@ form {
   margin-bottom: 5px;
 }
 
+.mind-user {
+  position: relative;
+  left: 55px;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.mind-user-email {
+  position: relative;
+  top: -7px;
+  left: 55px;
+  color: rgb(44, 44, 44);
+  font-weight: 600;
+  opacity: 0.6;
+}
 .nweet {
   margin-bottom: 20px;
-  background-color: #ddd;
+  background-color: #f6f6f6;
   width: 100%;
   max-width: 320px;
   padding: 20px;
+  padding-bottom: 50px;
   border-radius: 10px;
+  border: 1px solid #ddd;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -87,13 +105,13 @@ form {
 }
 
 .nweet h4 {
-  font-size: 14px;
+  font-size: 17px;
 }
 
 .nweet img {
-  right: -70px;
+  right: 223px;
   top: -10px;
-  border-radius: 15px;
+  border-radius: 10px;
   position: absolute;
   width: 70px;
   height: 70px;
@@ -102,7 +120,7 @@ form {
 
 .nweet__actions {
   position: absolute;
-  right: 10px;
+  right: 15px;
   top: 10px;
 }
 
@@ -111,5 +129,5 @@ form {
 }
 
 .nweet__actions span:first-child {
-  margin-right: 10px;
+  margin-right: 15px;
 }
