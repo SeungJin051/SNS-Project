@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/NewProject/static/css/main.9fa6178d.css",
-    "main.js": "/NewProject/static/js/main.c159463c.js",
-    "index.html": "/NewProject/index.html",
-    "main.9fa6178d.css.map": "/NewProject/static/css/main.9fa6178d.css.map",
-    "main.c159463c.js.map": "/NewProject/static/js/main.c159463c.js.map"
+    "main.css": "/SNS-Project.git/static/css/main.9fa6178d.css",
+    "main.js": "/SNS-Project.git/static/js/main.8dcd1423.js",
+    "index.html": "/SNS-Project.git/index.html",
+    "main.9fa6178d.css.map": "/SNS-Project.git/static/css/main.9fa6178d.css.map",
+    "main.8dcd1423.js.map": "/SNS-Project.git/static/js/main.8dcd1423.js.map"
   },
   "entrypoints": [
     "static/css/main.9fa6178d.css",
-    "static/js/main.c159463c.js"
+    "static/js/main.8dcd1423.js"
   ]
 }
