@@ -1,6 +1,12 @@
 import { dbService } from "fbase";
-import { useState, useEffect } from "react";
-import { collection, onSnapshot } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  query,
+  onSnapshot,
+  orderBy,
+} from "firebase/firestore";
+import React, { useEffect, useState } from "react";
 import Mind from "components/Mind";
 import MindFactory from "components/MindFactory";
 
@@ -10,7 +16,11 @@ const Home = ({ userObj }) => {
   const [minds, setMinds] = useState([]);
   useEffect(() => {
     // 실시간 구현
-    onSnapshot(collection(dbService, "minds"), (snapshot) => {
+    const q = query(
+      collection(dbService, "minds"),
+      orderBy("createdAt", "desc")
+    );
+    onSnapshot(q, (snapshot) => {
       const mindArray = snapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
