@@ -40,7 +40,7 @@ function App() {
   };
 
   return (
-    <>
+    <div>
       {init ? (
         <AppRouter
           isLoggedIn={isLoggedIn}
@@ -48,13 +48,20 @@ function App() {
           refreshUser={refreshUser}
         />
       ) : (
-        "Initializing..."
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            marginTop: "100%",
+            fontSize: "30px",
+            fontWeight: "900",
+          }}
+        >
+          Loading...
+        </div>
       )}
-      <footer>
-        {new Date().getFullYear()} {new Date().getMonth()}{" "}
-        {new Date().getDate()} {new Date().getHours()}
-      </footer>
-    </>
+    </div>
   );
 }
 
