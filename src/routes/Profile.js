@@ -11,6 +11,8 @@ import {
 import { dbService } from "fbase";
 import { updateProfile } from "@firebase/auth";
 import "styles/ProfileTest.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSignOut } from "@fortawesome/free-solid-svg-icons";
 
 //1. 로그인한 유저 정보 prop으로 받기
 const Profile = ({ userObj, refreshUser }) => {
@@ -75,12 +77,12 @@ const Profile = ({ userObj, refreshUser }) => {
         />
         <input type="submit" value="프로필 이름 변경" className="profileBtn" />
       </form>
-      {/* <button onClick={onLogOutClick}>
-        {" "}
-        <Link to="/">Sign out</Link>
-      </button> */}
-      <span className="formBtn cancelBtn logOut" onClick={onLogOutClick}>
-        Log Out
+      <div className="pro-line"></div>
+      <span
+        className="pro-logout-btn formBtn cancelBtn logOut"
+        onClick={onLogOutClick}
+      >
+        <FontAwesomeIcon icon={faSignOut} size="2x" />
       </span>
     </div>
   );
