@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/SNS-Project/static/css/main.9fa6178d.css",
-    "main.js": "/SNS-Project/static/js/main.ea24024c.js",
+    "main.css": "/SNS-Project/static/css/main.a9dc6c74.css",
+    "main.js": "/SNS-Project/static/js/main.f105851e.js",
     "index.html": "/SNS-Project/index.html",
-    "main.9fa6178d.css.map": "/SNS-Project/static/css/main.9fa6178d.css.map",
-    "main.ea24024c.js.map": "/SNS-Project/static/js/main.ea24024c.js.map"
+    "main.a9dc6c74.css.map": "/SNS-Project/static/css/main.a9dc6c74.css.map",
+    "main.f105851e.js.map": "/SNS-Project/static/js/main.f105851e.js.map"
   },
   "entrypoints": [
-    "static/css/main.9fa6178d.css",
-    "static/js/main.ea24024c.js"
+    "static/css/main.a9dc6c74.css",
+    "static/js/main.f105851e.js"
   ]
 }
