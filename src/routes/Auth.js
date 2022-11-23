@@ -38,14 +38,14 @@ const Auth = () => {
           name="google"
           className="authBtn_google"
         >
-          구글 로그인 <FontAwesomeIcon icon={faGoogle} />
+          <FontAwesomeIcon icon={faGoogle} /> Google 로그인
         </button>
         <button
           onClick={onSocialClick}
           name="github"
           className="authBtn_github"
         >
-          깃허브 로그인 <FontAwesomeIcon icon={faGithub} />
+          <FontAwesomeIcon icon={faGithub} /> GitHub 로그인
         </button>
       </div>
     </div>
