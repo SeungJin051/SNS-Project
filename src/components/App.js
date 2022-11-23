@@ -20,8 +20,8 @@ function App() {
         // });
         // 로컬 닉네임 설정 ** 고민 후 결정하자 ~~~~~~~~~~~~~~~~
         if (user.displayName === null) {
-          const name = user.email.split("@")[0];
-          // const name = "Anonymous";
+          // const name = user.email.split("@")[0];
+          const name = "Anonymous";
           user.displayName = name;
         }
       } else {
