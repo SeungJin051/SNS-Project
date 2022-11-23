@@ -51,6 +51,7 @@ const AuthForm = () => {
           className="login-image"
           src="https://www.waca.associates/jp/knowledge/wp-content/uploads/2020/06/2020-06-26-sns-manager-03-1000x525.png"
         />
+        <h1 className="main-title">Mind Share</h1>
         <input
           name="email"
           type="email"
@@ -73,15 +74,30 @@ const AuthForm = () => {
 
         <input
           type="submit"
-          value={newAccount ? "회원가입" : "로그인"}
+          value={newAccount ? "로그인" : "가입하기"}
           className=" authSubmitInput"
         />
         {error && <span className="authError">{error}</span>}
       </form>
-
-      <span onClick={toggleAccount} className="authSwitch">
-        {newAccount ? "회원가입" : "로그인"}
-      </span>
+      <div onClick={toggleAccount} className="authSwitch">
+        {newAccount ? (
+          <div>
+            <p>계정이 없으신가요?</p> <br></br>
+            <span className="change-login">
+              {newAccount ? " 가입" : " 로그인"}
+            </span>
+            <span>하기</span>
+          </div>
+        ) : (
+          <div>
+            <p>이미 가입하셨나요?</p> <br></br>
+            <span className="change-login">
+              {newAccount ? " 가입" : " 로그인"}
+            </span>
+            <span>하기</span>
+          </div>
+        )}
+      </div>
     </>
   );
 };
