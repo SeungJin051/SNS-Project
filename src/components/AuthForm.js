@@ -23,18 +23,18 @@ const AuthForm = () => {
   };
 
   // createUserWithEmailAndPassword
+  const auth = getAuth();
+
   const onSubmit = async (event) => {
     event.preventDefault();
     try {
       let data;
       if (newAccount) {
         // create account
-        const auth = getAuth();
-        data = await createUserWithEmailAndPassword(auth, email, password);
+        data = await signInWithEmailAndPassword(auth, email, password);
       } else {
         // login
-        const auth = getAuth();
-        data = await signInWithEmailAndPassword(auth, email, password);
+        data = await createUserWithEmailAndPassword(auth, email, password);
       }
       console.log(data);
     } catch (error) {
