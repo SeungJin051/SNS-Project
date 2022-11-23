@@ -74,7 +74,7 @@ const Mind = ({ mindObj, isOwner }) => {
         <>
           <h3 className="mind-user">{mindObj.name}</h3>
           <br></br>
-          <h4 className="mind-user-email">{mindObj.email}</h4>
+          {/* <h4 className="mind-user-email">{mindObj.email}</h4> */}
           <br></br>
           <br></br>
           <h4 className="mind-text">{mindObj.text}</h4>
