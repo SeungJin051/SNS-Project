@@ -73,12 +73,17 @@ const Mind = ({ mindObj, isOwner }) => {
       ) : (
         <>
           <h3 className="mind-user">{mindObj.name}</h3>
+          {/* date().todatestring()  */}
+          {/* <h3> {mindObj.timestamp.toDate().toDateString()} </h3> */}
+          <h3 className="mind-date">
+            {mindObj.timestamp.toDate().toLocaleDateString("ko-KR")}
+          </h3>
           <br></br>
           {/* <h4 className="mind-user-email">{mindObj.email}</h4> */}
           <br></br>
           <br></br>
-          <h4 className="mind-text">{mindObj.text}</h4>
           {mindObj.fileUrl && <img src={mindObj.fileUrl} />}
+          <h4 className="mind-text">{mindObj.text}</h4>
           {isOwner && (
             <div className="nweet__actions">
               <span onClick={onDeleteClick}>
