@@ -92,6 +92,16 @@ form {
   font-weight: 300;
   opacity: 0.6;
 }
+
+.mind-date {
+  position: relative;
+  top: -15px;
+  left: -18px;
+  color: rgb(44, 44, 44);
+  font-weight: 300;
+  opacity: 0.6;
+}
+
 .nweet {
   background-color: white;
   width: 100%;
@@ -103,26 +113,27 @@ form {
   display: flex;
   flex-direction: column;
   color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 25px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .nweet h4 {
   font-size: 17px;
+  margin-top: -30px;
 }
 
 .nweet img {
-  right: 5px;
-  top: -3px;
-  border-radius: 10px;
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  margin-top: 10px;
+  width: 318px;
+  height: 318px;
+  margin-top: -40px;
+  margin-left: -30px;
+  margin-bottom: 60px;
 }
 
 .nweet__actions {
   position: absolute;
-  right: 90px;
-  top: 10px;
+  right: 20px;
+  top: 25px;
 }
 
 .nweet__actions span {

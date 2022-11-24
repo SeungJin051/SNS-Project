@@ -57,6 +57,7 @@ form {
   font-size: 17px;
   margin-left: -75px;
   margin-bottom: 20px;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
 }
 
 .factoryInput__input::placeholder {
