@@ -1,6 +1,6 @@
 import { dbService, storageService } from "fbase";
 import { doc, deleteDoc, updateDoc } from "firebase/firestore";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { deleteObject, ref } from "@firebase/storage";
 import "styles/MindTest.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,7 +9,6 @@ import { faTrash, faPencilAlt } from "@fortawesome/free-solid-svg-icons";
 const Mind = ({ mindObj, isOwner }) => {
   const [editing, setEditing] = useState(false);
   const [newMind, setNewMind] = useState(mindObj.text);
-
   const MindTextRef = doc(dbService, "minds", `${mindObj.id}`);
   // 삭제
   const onDeleteClick = async () => {
@@ -72,6 +71,9 @@ const Mind = ({ mindObj, isOwner }) => {
         </>
       ) : (
         <>
+          {mindObj.photoURL && (
+            <img className="profilePic" src={mindObj.photoURL} />
+          )}
           <h3 className="mind-user">{mindObj.name}</h3>
           {/* date().todatestring()  */}
           {/* <h3> {mindObj.timestamp.toDate().toDateString()} </h3> */}
@@ -82,7 +84,9 @@ const Mind = ({ mindObj, isOwner }) => {
           {/* <h4 className="mind-user-email">{mindObj.email}</h4> */}
           <br></br>
           <br></br>
-          {mindObj.fileUrl && <img src={mindObj.fileUrl} />}
+          {mindObj.fileUrl && (
+            <img className="nweet-img" src={mindObj.fileUrl} />
+          )}
           <h4 className="mind-text">{mindObj.text}</h4>
           {isOwner && (
             <div className="nweet__actions">

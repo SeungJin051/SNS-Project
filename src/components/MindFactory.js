@@ -32,6 +32,7 @@ const MindFactory = ({ userObj }) => {
       creatorID: userObj.uid,
       email: userObj.email,
       name: userObj.displayName,
+      photoURL: userObj.photoURL,
       like: 0,
       timestamp: new Date(),
       fileUrl,
@@ -53,6 +54,7 @@ const MindFactory = ({ userObj }) => {
     } = event;
     setMind(value);
   };
+
   const onFileChange = (event) => {
     const {
       target: { files },

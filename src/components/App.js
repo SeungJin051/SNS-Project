@@ -24,6 +24,10 @@ function App() {
           // const name = "Anonymous";
           user.displayName = name;
         }
+        if (user.photoURL === null) {
+          user.photoURL =
+            "https://audition.hanbiton.com/images/common/img_default.jpg";
+        }
       } else {
         setIsLoggedIn(false);
         setUserObj(null);
