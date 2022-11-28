@@ -65,7 +65,6 @@ const Profile = ({ userObj, refreshUser }) => {
   return (
     // Link to = "/"
     <div className="container">
-      {" "}
       <form onSubmit={onSubmit} className="profileForm">
         <input
           onChange={onChange}

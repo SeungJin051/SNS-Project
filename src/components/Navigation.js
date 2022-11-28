@@ -9,7 +9,7 @@ const Navigation = ({ userObj }) => (
       <li>
         <Link to="/" tyle={{ marginRight: 10 }}>
           <FontAwesomeIcon icon={faHomeAlt} size="2x" />
-          <p style={{ fontWeight: "bold", marginLeft: 9 }}>홈</p>
+          {/* <p style={{ fontWeight: "bold", marginLeft: 9 }}>홈</p> */}
         </Link>
       </li>
       <li>
