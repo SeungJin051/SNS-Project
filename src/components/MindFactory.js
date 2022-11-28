@@ -32,8 +32,8 @@ const MindFactory = ({ userObj }) => {
       creatorID: userObj.uid,
       email: userObj.email,
       name: userObj.displayName,
-      timestamp: new Date(),
       like: 0,
+      timestamp: new Date(),
       fileUrl,
     };
 
