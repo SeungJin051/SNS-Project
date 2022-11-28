@@ -95,13 +95,14 @@ form {
 .factoryForm__attachment img {
   height: 80px;
   width: 80px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .factoryForm__clear {
-  color: #04aaff;
+  color: #53ad88;
   cursor: pointer;
   text-align: center;
+  margin: 13px 0px;
 }
 
 .factoryForm__clear span {
