@@ -33,6 +33,7 @@ const MindFactory = ({ userObj }) => {
       email: userObj.email,
       name: userObj.displayName,
       timestamp: new Date(),
+      like: 0,
       fileUrl,
     };
 
