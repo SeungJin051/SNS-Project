@@ -18,11 +18,20 @@ function App() {
         //   uid: user.uid,
         //   updateProfile: (args) => user.updateProfile(args),
         // });
+
+        //
+        // if (user.photoURL === null) {
+        //   user.photoURL =
+        //     "https://audition.hanbiton.com/images/common/img_default.jpg";
+        // }
         // 로컬 닉네임 설정 ** 고민 후 결정하자 ~~~~~~~~~~~~~~~~
         if (user.displayName === null) {
           const name = user.email.split("@")[0];
           // const name = "Anonymous";
           user.displayName = name;
+        } else if (user.photoURL === null) {
+          user.photoURL =
+            "https://audition.hanbiton.com/images/common/img_default.jpg";
         }
       } else {
         setIsLoggedIn(false);

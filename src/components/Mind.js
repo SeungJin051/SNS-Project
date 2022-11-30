@@ -10,13 +10,13 @@ const Mind = ({ mindObj, isOwner }) => {
   const [editing, setEditing] = useState(false);
   const [newMind, setNewMind] = useState(mindObj.text);
   const MindTextRef = doc(dbService, "minds", `${mindObj.id}`);
-  // 삭제
 
   if (mindObj.photoURL === null) {
     mindObj.photoURL =
       "https://audition.hanbiton.com/images/common/img_default.jpg";
   }
 
+  // 삭제
   const onDeleteClick = async () => {
     const ok = window.confirm("정말 삭제하시겠습니까?");
     console.log(ok);

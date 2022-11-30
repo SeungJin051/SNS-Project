@@ -58,6 +58,10 @@ const Profile = ({ userObj, refreshUser }) => {
       await updateProfile(authService.currentUser, {
         displayName: newUserName,
       });
+      if (userObj.photoURL === null) {
+        userObj.photoURL =
+          "https://audition.hanbiton.com/images/common/img_default.jpg";
+      }
       refreshUser();
     }
   };
